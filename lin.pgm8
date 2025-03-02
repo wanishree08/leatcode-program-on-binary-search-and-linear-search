@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int linearSearch(int arr[], int n, int target) {
+    arr[n] = target; // Sentinel
+    int i = 0;
+    while (arr[i] != target)
+        i++;
+    return (i < n) ? i : -1;
+}
+
+int main() {
+    int arr[] = {11, 22, 33, 44, 55, -1}; // Extra space for sentinel
+    int n = sizeof(arr) / sizeof(arr[0]) - 1; // Exclude sentinel space
+    int target = 33;
+    int result = linearSearch(arr, n, target);
+    if (result != -1)
+        cout << "Element found at index " << result;
+    else
+        cout << "Element not found";
+    return 0;
+}
